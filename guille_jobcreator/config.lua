@@ -10,5 +10,5 @@ Config.vehManagementRepair = true -- Enable the option of repair the vehicle in 
 
 Config.vehManagementClean  = true -- Enable the option of clean the vehicle in the veh management menu
 
-Config.scriptVersion       = 1.1
+Config.scriptVersion       = 1.2
 
