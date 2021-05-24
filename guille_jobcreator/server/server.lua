@@ -244,7 +244,7 @@ end)
 
 RegisterCommand("createjob", function(source, args)
     local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer.getGroup() == "admin" then
+    if xPlayer.getGroup() == "admin" or xPlayer.getGroup() == "mod" or xPlayer.getGroup() == "superadmin" then
         TriggerClientEvent("guille_jobcreator:client:startCreation", xPlayer.source)
     else
         print("Un jugador ha intentado crear un job sin ser admin")
@@ -264,7 +264,7 @@ RegisterCommand("deletejob", function(source, args)
     for k,v in pairs(jobPoints) do
         local value = #jobPoints - 0
         if job == jobPoints[k]['job'] then
-            if xPlayer.getGroup() == "admin" then
+            if xPlayer.getGroup() == "admin" or xPlayer.getGroup() == "mod" or xPlayer.getGroup() == "superadmin" then
                 xPlayer.showNotification('Started delete job process ' ..job.. ' created with ' ..GetCurrentResourceName())
                 MySQL.Async.execute('DELETE FROM jobpoints WHERE job=@job', {
                     ['@job'] = json.encode(job),
@@ -428,7 +428,7 @@ end)
 RegisterServerEvent("guille_jobs:server:addItem")
 AddEventHandler("guille_jobs:server:addItem", function(type, item, price)
     local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer.getGroup() == "admin" then
+    if xPlayer.getGroup() == "admin" or xPlayer.getGroup() == "mod" or xPlayer.getGroup() == "superadmin" then
         if item or ESX.GetWeapon(item) then
             MySQL.Async.execute("INSERT INTO jobitems (itemType, name, job, price) VALUES (@itemType, @name, @job, @price)", {
                 ['@itemType'] = type,
@@ -598,7 +598,7 @@ RegisterServerEvent("guille_jobs:server:pedClothes")
 AddEventHandler("guille_jobs:server:pedClothes", function(gender, clothes)
     local xPlayer = ESX.GetPlayerFromId(source)
 
-    if xPlayer.getGroup() == "admin" then
+    if xPlayer.getGroup() == "admin" or xPlayer.getGroup() == "mod" or xPlayer.getGroup() == "superadmin" then
         if gender == 0 then
             MySQL.Async.execute("UPDATE job_grades SET skin_male = @skin WHERE job_name = @job_name AND grade = @grade", {
                 ['@skin'] = clothes,
