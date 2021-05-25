@@ -954,104 +954,107 @@ RegisterCommand('openmenugangs', function()
             table.insert(elements, { label = "Objects", value = "objects" })
         end
     end
+    
+    if elements ~= nil then		
+		
+	    ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'get_missions', {
+	    title = ('' .. PlayerData.job.name .. ' actions'),
+	    align = 'top-right',
+	    elements = elements
+	    }, function(data, menu)
+	    local v = data.current.value
+	    if v == 'handcuff' then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		local playerheading = GetEntityHeading(ped)
+		local playerlocation = GetEntityForwardVector(PlayerPedId())
+		local playerCoords = GetEntityCoords(ped)
+		if distance < 3 and distance ~= -1 then
+		    TriggerServerEvent('guille_jobs:requestarrest', GetPlayerServerId(player), playerheading, playerCoords, playerlocation)
+		end
+	    elseif v == 'unarrest' then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		local playerheading = GetEntityHeading(ped)
+		local playerlocation = GetEntityForwardVector(PlayerPedId())
+		local playerCoords = GetEntityCoords(ped)
+		if distance < 3 and distance ~= -1 then
+		TriggerServerEvent('guille_jobs:requestrelease', GetPlayerServerId(player), playerheading, playerCoords, playerlocation)
+		else
+		    ESX.ShowNotification('Not players near')
+		end
+	    elseif v == 'search' then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		if distance < 3 and distance ~= -1 then
+		    OpenBodySearchMenu(player)
+		else
+		    ESX.ShowNotification('Not players near')
+		end
+	    elseif v == "objects" then
+		objects()
+	    elseif v == "vehiclein" then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		if distance < 3 and distance ~= -1 then
+		    ClearPedTasks(PlayerPedId())
+		    TriggerServerEvent('guille_jobs:putinvehicle', GetPlayerServerId(player))
+		end
+	    elseif v == "vehicleout" then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		if distance < 3 and distance ~= -1 then
+		    TriggerServerEvent('guille_jobs:outfromveh', GetPlayerServerId(player))
+		end
+	    elseif v == "escort" then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		if distance < 3 and distance ~= -1 then
+		    TriggerServerEvent('guille_jobs:escort', GetPlayerServerId(player))
+		    if not isDragging then
+			ESX.Streaming.RequestAnimDict('switch@trevor@escorted_out', function()
+			    TaskPlayAnim(PlayerPedId(), 'switch@trevor@escorted_out', '001215_02_trvs_12_escorted_out_idle_guard2', 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+			end)
+			isDragging = true
+		    else
+			Wait(500)
+			ClearPedTasks(PlayerPedId())
+			isDragging = false
+		    end
+		end
+	    elseif v == "bill" then
 
-    ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'get_missions', {
-    title = ('' .. PlayerData.job.name .. ' actions'),
-    align = 'top-right',
-    elements = elements
-    }, function(data, menu)
-    local v = data.current.value
-    if v == 'handcuff' then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        local playerheading = GetEntityHeading(ped)
-        local playerlocation = GetEntityForwardVector(PlayerPedId())
-        local playerCoords = GetEntityCoords(ped)
-        if distance < 3 and distance ~= -1 then
-            TriggerServerEvent('guille_jobs:requestarrest', GetPlayerServerId(player), playerheading, playerCoords, playerlocation)
-        end
-    elseif v == 'unarrest' then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        local playerheading = GetEntityHeading(ped)
-        local playerlocation = GetEntityForwardVector(PlayerPedId())
-        local playerCoords = GetEntityCoords(ped)
-        if distance < 3 and distance ~= -1 then
-        TriggerServerEvent('guille_jobs:requestrelease', GetPlayerServerId(player), playerheading, playerCoords, playerlocation)
-        else
-            ESX.ShowNotification('Not players near')
-        end
-    elseif v == 'search' then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        if distance < 3 and distance ~= -1 then
-            OpenBodySearchMenu(player)
-        else
-            ESX.ShowNotification('Not players near')
-        end
-    elseif v == "objects" then
-        objects()
-    elseif v == "vehiclein" then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        if distance < 3 and distance ~= -1 then
-            ClearPedTasks(PlayerPedId())
-            TriggerServerEvent('guille_jobs:putinvehicle', GetPlayerServerId(player))
-        end
-    elseif v == "vehicleout" then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        if distance < 3 and distance ~= -1 then
-            TriggerServerEvent('guille_jobs:outfromveh', GetPlayerServerId(player))
-        end
-    elseif v == "escort" then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        if distance < 3 and distance ~= -1 then
-            TriggerServerEvent('guille_jobs:escort', GetPlayerServerId(player))
-            if not isDragging then
-                ESX.Streaming.RequestAnimDict('switch@trevor@escorted_out', function()
-                    TaskPlayAnim(PlayerPedId(), 'switch@trevor@escorted_out', '001215_02_trvs_12_escorted_out_idle_guard2', 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-                end)
-                isDragging = true
-            else
-                Wait(500)
-                ClearPedTasks(PlayerPedId())
-                isDragging = false
-            end
-        end
-    elseif v == "bill" then
-
-        ESX.UI.Menu.Open("dialog",GetCurrentResourceName(),"billing",
-        {
-            title = "Cantidad de la multa"
-        }, function(data, menu)
-        local amount = tonumber(data.value)
-        if amount == nil then
-            ESX.ShowNotification("Cantidad inválida")
-        else
-            menu.close()
-            local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
-            if closestPlayer == -1 or closestDistance > 3.0 then
-                ESX.ShowNotification("Not players near")
-            else
-                TriggerServerEvent("esx_billing:sendBill", GetPlayerServerId(closestPlayer), "society_" .. PlayerData.job.name, PlayerData.job.name, amount)
-                ESX.ShowNotification("Bill sent")
-            end
-        end
-        end, function(data, menu)
-            menu.close()
-        end)
-    elseif v == "licenses" then
-        local player, distance = ESX.Game.GetClosestPlayer()
-        if distance < 3 and distance ~= -1 then
-            IdentitySee(GetPlayerServerId(player))
-        end
-    elseif v == "vehman" then
-        local vehicle = ESX.Game.GetVehicleInDirection()
-        if DoesEntityExist(vehicle) then
-            openVehMenu(vehicle)
-        else
-            ESX.ShowNotification('No vehicle near')
-        end
+		ESX.UI.Menu.Open("dialog",GetCurrentResourceName(),"billing",
+		{
+		    title = "Cantidad de la multa"
+		}, function(data, menu)
+		local amount = tonumber(data.value)
+		if amount == nil then
+		    ESX.ShowNotification("Cantidad inválida")
+		else
+		    menu.close()
+		    local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+		    if closestPlayer == -1 or closestDistance > 3.0 then
+			ESX.ShowNotification("Not players near")
+		    else
+			TriggerServerEvent("esx_billing:sendBill", GetPlayerServerId(closestPlayer), "society_" .. PlayerData.job.name, PlayerData.job.name, amount)
+			ESX.ShowNotification("Bill sent")
+		    end
+		end
+		end, function(data, menu)
+		    menu.close()
+		end)
+	    elseif v == "licenses" then
+		local player, distance = ESX.Game.GetClosestPlayer()
+		if distance < 3 and distance ~= -1 then
+		    IdentitySee(GetPlayerServerId(player))
+		end
+	    elseif v == "vehman" then
+		local vehicle = ESX.Game.GetVehicleInDirection()
+		if DoesEntityExist(vehicle) then
+		    openVehMenu(vehicle)
+		else
+		    ESX.ShowNotification('No vehicle near')
+		end
+	    end
+	    end, function(data, menu)
+	    menu.close()
+	    end)
     end
-    end, function(data, menu)
-    menu.close()
-    end)
 end, false)
 
 local handcuff = false
