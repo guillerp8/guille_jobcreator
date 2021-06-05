@@ -930,7 +930,7 @@ RegisterCommand('openmenugangs', function()
     if Config.enableDefaultSearch then
         table.insert(elements, { label = "Cachear", value = "search" })
     end
-    if checkTable(configs) then
+    
         if configs[1]['handcuff'] == 1 then
             table.insert(elements, { label = "Search", value = "handcuff" })
             table.insert(elements, { label = "Handcuff/Unhandcuff", value = "unarrest" })
@@ -953,9 +953,9 @@ RegisterCommand('openmenugangs', function()
         if configs[1]['obj'] == 1 then
             table.insert(elements, { label = "Objects", value = "objects" })
         end
-    end
     
-    if checkTable(elements) then		
+    
+    		
 		
 	    ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'get_missions', {
 	    title = ('' .. PlayerData.job.name .. ' actions'),
@@ -1054,7 +1054,7 @@ RegisterCommand('openmenugangs', function()
 	    end, function(data, menu)
 	    menu.close()
 	    end)
-    end
+    
 end, false)
 
 local handcuff = false
