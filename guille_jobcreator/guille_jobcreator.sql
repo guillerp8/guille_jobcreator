@@ -3,7 +3,7 @@ USE `es_extended`;
 CREATE TABLE `jobblips` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`text` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
-	`coords` LONGTEXT NOT NULL DEFAULT '' COLLATE 'utf8mb4_bin',
+	`coords` VARCHAR(255) NOT NULL DEFAULT '' COLLATE 'utf8mb4_bin',
 	`sprite` INT(11) NOT NULL DEFAULT '0',
 	`color` INT(11) NOT NULL DEFAULT '0',
 	`job` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
