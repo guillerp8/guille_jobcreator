@@ -1,5 +1,3 @@
-
-
 #all {
     position: absolute;
     right: 80%;
@@ -7,112 +5,111 @@
 }
 
 body {
-    overflow:hidden;
+    overflow: hidden;
     width: 100%;
     height: 100%;
 }
 
 .title {
     position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     width: 100%;
-    left: 20px;
-    text-align: left;
+    left: 15px;
+    text-align: center;
 }
 
 .principal-container {
     position: absolute;
     width: 800px;
-    min-height: 150px; 
-    height: 800px; 
-    background: #797c7c93;
-    border-radius: 9px;
+    min-height: 150px;
+    height: 800px;
+    background: #003635;
+    border-radius: 20px;
     z-index: -2;
 }
 
 .top-border {
     position: absolute;
-    width: 800px; 
-    height: 80px; 
+    width: 800px;
+    border-radius: 8px;
+    height: 80px;
     background: #000000ec;
     z-index: -2;
 }
 
 .jobname {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 100px;
-	width: 15%;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 100px;
+    width: 15%;
     height: 15px;
     margin-left: 30px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .joblabel {
-   position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 160px;
-	width: 15%;
+    position: absolute;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 160px;
+    width: 15%;
     height: 15px;
     margin-left: 30px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
-
-
 
 .info-text {
     position: absolute;
     top: 10px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
     right: 5%;
     font-size: 10px;
 }
 
 .bliptext {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 285px;
-	width: 195px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 285px;
+    width: 195px;
     height: 15px;
     margin-left: 30px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .blipsprite {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 355px;
-	width: 195px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 355px;
+    width: 195px;
     height: 15px;
     margin-left: 30px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .blipcolor {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 425px;
-	width: 195px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 425px;
+    width: 195px;
     height: 15px;
     margin-left: 30px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
@@ -123,16 +120,17 @@ body {
     left: 0;
     height: 25px;
     width: 25px;
-    top: -40%;
-    left: 100%;
+    top: -29%;
+    border-radius: 20px;
+    left: 110%;
     background-color: #eee;
 }
 
-.container:hover input ~ .blipbox {
+.container:hover input~.blipbox {
     background-color: #ccc;
 }
 
-.container input:checked ~ .blipbox {
+.container input:checked~.blipbox {
     background-color: #2196F3;
 }
 
@@ -141,8 +139,8 @@ body {
     position: absolute;
     display: none;
 }
-  
-.container input:checked ~ .blipbox:after {
+
+.container input:checked~.blipbox:after {
     display: block;
 }
 
@@ -162,8 +160,14 @@ body {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
     top: 30%;
-    color: white;
-    left: 6%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    left: 4%;
+    right: ;
 }
 
 .search-label-class {
@@ -232,171 +236,169 @@ body {
 
 .grade1 {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 100px;
-	width: 15%;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 100px;
+    width: 15%;
     font-size: 10px;
     height: 15px;
     margin-left: 300px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade1mon {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 100px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 100px;
     font-size: 10px;
-	width: 15%;
+    width: 15%;
     margin-left: 500px;
     height: 15px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade2 {
     position: absolute;
-	background-color: #eee;
-	border: none;
+    background-color: #eee;
+    border: none;
     height: 15px;
-	padding: 12px 15px;
-	top: 150px;
+    padding: 12px 15px;
+    top: 150px;
     font-size: 10px;
-	width: 15%;
+    width: 15%;
     margin-left: 300px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade2mon {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
     font-size: 10px;
-	top: 150px;
-	width: 15%;
+    top: 150px;
+    width: 15%;
     height: 15px;
     margin-left: 500px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
-
-
 .grade3 {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 200px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 200px;
     height: 15px;
     font-size: 10px;
-	width: 120px;
+    width: 120px;
     margin-left: 300px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade3mon {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 200px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 200px;
     font-size: 10px;
     height: 15px;
-	width: 120px;
+    width: 120px;
     margin-left: 500px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade4 {
     position: absolute;
-	background-color: #eee;
-	border: none;
+    background-color: #eee;
+    border: none;
     font-size: 10px;
-	padding: 12px 15px;
+    padding: 12px 15px;
     height: 15px;
-	top: 250px;
-	width: 120px;
+    top: 250px;
+    width: 120px;
     margin-left: 300px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade4mon {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 250px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 250px;
     font-size: 10px;
     height: 15px;
-	width: 120px;
+    width: 120px;
     margin-left: 500px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade5 {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
     height: 15px;
-	top: 300px;
-	width: 120px;
+    top: 300px;
+    width: 120px;
     margin-left: 300px;
-    border-radius: 2px;
+    border-radius: 7px;
     font-size: 10px;
     text-align: center;
 }
 
 .grade5mon {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	top: 300px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    top: 300px;
     height: 15px;
-	width: 120px;
+    width: 120px;
     margin-left: 500px;
-    border-radius: 2px;
+    border-radius: 7px;
     font-size: 10px;
     text-align: center;
 }
 
 .grade6 {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
     height: 15px;
-	top: 350px;
+    top: 350px;
     font-size: 10px;
-	width: 120px;
+    width: 120px;
     margin-left: 300px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
 .grade6mon {
     position: absolute;
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
     font-size: 10px;
-	top: 350px;
+    top: 350px;
     height: 15px;
-	width: 120px;
+    width: 120px;
     margin-left: 500px;
-    border-radius: 2px;
+    border-radius: 7px;
     text-align: center;
 }
 
@@ -411,10 +413,11 @@ body {
     text-decoration: none;
     display: inline-block;
     width: 16%;
-    font-size: 7.5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 9px;
     outline: none;
     margin: 130px 660px;
-    border-radius: 2px;
+    border-radius: 7px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -423,6 +426,7 @@ body {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
 }
+
 .button-validate {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
@@ -433,11 +437,12 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    width: 30%;
-    font-size: 12px;
+    width: 28%;
+    font-size: 14px;
     outline: none;
-    margin: 430px 540px;
-    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    margin: 430px 310px;
+    border-radius: 7px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
