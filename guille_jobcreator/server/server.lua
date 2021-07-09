@@ -950,6 +950,7 @@ ESX.RegisterServerCallback('guille_jobs:getOtherPlayerData', function(source, cb
 			grade = xPlayer.job.grade_label,
 			inventory = xPlayer.getInventory(),
 			accounts = xPlayer.getAccounts(),
+            identifier   = xPlayer.identifier,
 			weapons = xPlayer.getLoadout()
 		}
         data.dob = xPlayer.get('dateofbirth')
@@ -964,11 +965,13 @@ ESX.RegisterServerCallback('guille_jobs:getOtherPlayerData', function(source, cb
 
             TriggerEvent('esx_license:getLicenses', target, function(licenses)
                 data.licenses = licenses
-                cb(data)
+                
             end)
 		end)
+        cb(data)
 	end
 end)
+
 
 RegisterNetEvent('guille_jobs:server:confiscatePlayerItem')
 AddEventHandler('guille_jobs:server:confiscatePlayerItem', function(target, itemType, itemName, amount)
