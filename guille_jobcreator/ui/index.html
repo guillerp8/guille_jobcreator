@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>guillerp#1928</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://kit.fontawesome.com/a412d17519.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-        <link rel=’stylesheet’ id=’jquery-ui-css-css’ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css?ver=5.2.4&#8242" type=’text/css’ media=’all’ />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-        <meta charset="utf-8">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <div class="all" id="all">
-            <div class="principal-container" id="principal-container">
-                <div class="top-border"></div>
-                <h1 class="title">guillerp scripts</h1>
-                <input id="jobname"  class="jobname" type="text" placeholder="Job name">
-                <input id="joblabel"  class="joblabel" type="text" placeholder="Job label">
 
-                <input id="grade1"  class="grade1" type="text" placeholder="Grade name 1">
-                <input id="grade1mon"  class="grade1mon" type="number" placeholder="Grade salary 1">
-                <input id="grade2"  class="grade2" type="text" placeholder="Grade name 2">
-                <input id="grade2mon"  class="grade2mon" type="number" placeholder="Grade salary 2">
-                <!--<input id="grade3"  class="grade3" type="text" placeholder="Grade name 3">
+<head>
+    <meta charset="utf-8">
+    <title>guillerp#1928</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/a412d17519.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <link rel=’stylesheet’ id=’jquery-ui-css-css’ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css?ver=5.2.4&#8242" type=’text/css’ media=’all’ />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="all" id="all">
+        <div class="principal-container" id="principal-container">
+            <div class="top-border"></div>
+            <h1 class="title">GUILLERP JOB-CREATOR UI</h1>
+            <input id="jobname" class="jobname" type="text" placeholder="Job name">
+            <input id="joblabel" class="joblabel" type="text" placeholder="Job label">
+
+            <input id="grade1" class="grade1" type="text" placeholder="Grade name 1">
+            <input id="grade1mon" class="grade1mon" type="number" placeholder="Grade salary 1">
+            <input id="grade2" class="grade2" type="text" placeholder="Grade name 2">
+            <input id="grade2mon" class="grade2mon" type="number" placeholder="Grade salary 2">
+            <!--<input id="grade3"  class="grade3" type="text" placeholder="Grade name 3">
                 <input id="grade3mon"  class="grade3mon" type="text" placeholder="Grade salary 3">
                 <input id="grade4"  class="grade4" type="text" placeholder="Grade name 4">
                 <input id="grade4mon"  class="grade4mon" type="text" placeholder="Grade salary 4">-->
 
-                <!--<input id="bliptext"  class="bliptext" type="text" placeholder="Nombre del blip"> <input id="blipspray"  class="blipspray" type="number" placeholder="Spray del blip"> <input id="blipcolor"  class="blipcolor" type="number" placeholder="Color del job">-->
-                <label class="check-label-class">Blip?<input type="checkbox" id="blip" class="blipbox" value="blipyes"></label>
-                <label class="handcuff-label-class">Handcuff?<input type="checkbox" id="handcuff" class="blipbox" value="handcuffyes"></label>
-                <label class="vehinfo-label-class">Veh info?<input type="checkbox" id="vehinfo" class="blipbox" value="vehinfoyes"></label>
-                <label class="identity-label-class">Look identity?<input type="checkbox" id="identity" class="blipbox" value="identityyes"></label>
-                <label class="obj-label-class">Put objects?<input type="checkbox" id="obj" class="blipbox" value="objyes"></label>
-                <label class="alerts-label-class">Alerts?<input type="checkbox" id="alerts" class="blipbox" value="alertsyes"></label>
-                <label class="bill-label-class">Billing?<input type="checkbox" id="bill" class="blipbox" value="billyes"></label>
-                <label class="shop-label-class">Shop?<input type="checkbox" id="shop" class="blipbox" value="shopyes"></label>
-                <button class="button-moregrades" id="button-grades">Add grade (max 6)</button>
-                <button class="button-validate" id="button-validate">Create job</button>
-            </div>
+            <!--<input id="bliptext"  class="bliptext" type="text" placeholder="Nombre del blip"> <input id="blipspray"  class="blipspray" type="number" placeholder="Spray del blip"> <input id="blipcolor"  class="blipcolor" type="number" placeholder="Color del job">-->
+            <label class="check-label-class">Blip?<input type="checkbox" id="blip" class="blipbox" value="blipyes"></label>
+            <label class="handcuff-label-class">Handcuff?<input type="checkbox" id="handcuff" class="blipbox" value="handcuffyes"></label>
+            <label class="vehinfo-label-class">Veh info?<input type="checkbox" id="vehinfo" class="blipbox" value="vehinfoyes"></label>
+            <label class="identity-label-class">Look identity?<input type="checkbox" id="identity" class="blipbox" value="identityyes"></label>
+            <label class="obj-label-class">Put objects?<input type="checkbox" id="obj" class="blipbox" value="objyes"></label>
+            <label class="alerts-label-class">Alerts?<input type="checkbox" id="alerts" class="blipbox" value="alertsyes"></label>
+            <label class="bill-label-class">Billing?<input type="checkbox" id="bill" class="blipbox" value="billyes"></label>
+            <label class="shop-label-class">Shop?<input type="checkbox" id="shop" class="blipbox" value="shopyes"></label>
+            <button class="button-moregrades" id="button-grades">Add grade (Max 6)</button>
+            <button class="button-validate" id="button-validate">Finish and Create Job</button>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
