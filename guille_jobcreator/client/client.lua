@@ -932,8 +932,8 @@ RegisterCommand('openmenugangs', function()
     end
     if configs[1] ~= nil then
         if configs[1]['handcuff'] == 1 then
-            table.insert(elements, { label = "Search", value = "handcuff" })
-            table.insert(elements, { label = "Handcuff/Unhandcuff", value = "unarrest" })
+            table.insert(elements, { label = "Handcuff", value = "handcuff" })
+            table.insert(elements, { label = "Unhandcuff", value = "unarrest" })
             table.insert(elements, { label = "Add in vehicle", value = "vehiclein" })
             table.insert(elements, { label = "Out from vehicle", value = "vehicleout" })
             table.insert(elements, { label = "Escort", value = "escort" })
