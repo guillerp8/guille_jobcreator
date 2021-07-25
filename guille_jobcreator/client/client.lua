@@ -930,7 +930,7 @@ RegisterCommand('openmenugangs', function()
     if Config.enableDefaultSearch then
         table.insert(elements, { label = "Cachear", value = "search" })
     end
-    
+    if configs[1] ~= nil then
         if configs[1]['handcuff'] == 1 then
             table.insert(elements, { label = "Search", value = "handcuff" })
             table.insert(elements, { label = "Handcuff/Unhandcuff", value = "unarrest" })
@@ -953,7 +953,7 @@ RegisterCommand('openmenugangs', function()
         if configs[1]['obj'] == 1 then
             table.insert(elements, { label = "Objects", value = "objects" })
         end
-    
+    end
     
     		
 		
