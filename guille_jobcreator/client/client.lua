@@ -249,7 +249,7 @@ RegisterNUICallback("create", function(cb)
         end
         if cb.grade1mon ~= "" then
 
-            TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 0, "employe", cb.grade1, cb.grade1mon)
+            TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 1, "employe", cb.grade1, cb.grade1mon)
         else
             log("Te ha faltado un argumento imprescindible")
         end
@@ -260,9 +260,9 @@ RegisterNUICallback("create", function(cb)
         end
         if cb.grade2mon ~= "" then
             if cb.grade3 == "" or cb.grade3 == nil then
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 1, "boss", cb.grade2, cb.grade2mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 2, "boss", cb.grade2, cb.grade2mon)
             else
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 1, "guard", cb.grade2, cb.grade2mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 2, "guard", cb.grade2, cb.grade2mon)
             end
         else
             log("Te ha faltado un argumento imprescindible")
@@ -271,30 +271,30 @@ RegisterNUICallback("create", function(cb)
 
             if cb.grade4 == "" or cb.grade4 == nil then
 
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 2, "boss", cb.grade3, cb.grade3mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 3, "boss", cb.grade3, cb.grade3mon)
             else
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 2, "bat", cb.grade3, cb.grade3mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 3, "bat", cb.grade3, cb.grade3mon)
             end
         end
         if cb.grade4 ~= nil then
 
             if cb.grade5 == "" or cb.grade5 == nil then
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 3, "boss", cb.grade4, cb.grade4mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 4, "boss", cb.grade4, cb.grade4mon)
             else
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 3, "batm", cb.grade4, cb.grade4mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 4, "batm", cb.grade4, cb.grade4mon)
             end
         end
         if cb.grade5 ~= nil then
 
             if cb.grade6 == "" or cb.grade6 == nil then
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 4, "boss", cb.grade5, cb.grade5mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 5, "boss", cb.grade5, cb.grade5mon)
             else
-                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 4, "batma", cb.grade5, cb.grade5mon)
+                TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 5, "batma", cb.grade5, cb.grade5mon)
             end
         end
         if cb.grade6 ~= nil then
 
-            TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 5, "boss", cb.grade6, cb.grade6mon)
+            TriggerServerEvent("guille_jobs:server:addGrade", cb.job, 6, "boss", cb.grade6, cb.grade6mon)
         end
         if cb.blipadded == 1 then
 
