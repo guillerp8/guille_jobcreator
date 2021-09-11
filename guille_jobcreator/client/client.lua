@@ -955,7 +955,9 @@ RegisterCommand('openmenugangs', function()
         end
     end
     
-    		
+    	if #elements == 0 then
+		return
+	end
 		
 	    ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'get_missions', {
 	    title = ('' .. PlayerData.job.name .. ' actions'),
