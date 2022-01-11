@@ -2,7 +2,7 @@ License Zero Noncommercial Public License 1.0.0
 
 Copyright: guillerp© 2021
 
-Source: https://github.com/guillerp8/guille_gangsv2
+Source: https://github.com/guillerp8/guille_jobcreator
 
 **This software comes as is, without any warranty at all. As far
 as the law allows, I will not be liable for any damages related
